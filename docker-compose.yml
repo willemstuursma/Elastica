@@ -14,6 +14,8 @@ elasticsearch:
   #image: ruflin/elasticsearch-elastica
   volumes_from:
     - data
+  command: elasticsearch -Enetwork.host=0.0.0.0 -Ediscovery.zen.minimum_master_nodes=1 -Ebootstrap.ignore_system_bootstrap_checks=true
+
 nginx:
   build: ./env/nginx/
   #image: ruflin/nginx-elastica

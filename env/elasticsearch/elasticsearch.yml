@@ -1,13 +1,13 @@
 
-index.number_of_shards: 2
-index.number_of_replicas: 0
+#index.number_of_shards: 2
+#index.number_of_replicas: 0
 
 # Required plugins
-plugin.mandatory: mapper-attachments, delete-by-query #, image
+plugin.mandatory: mapper-attachments #, delete-by-query #, image
 
 # For script tests
 script.inline: on
-script.indexed: on
+#script.indexed: on
 
 script.engine.groovy.file: on
 
@@ -31,5 +31,5 @@ transport.tcp.port: 9300
 # Added for snapshot tests
 path.repo: ["/tmp/backups"]
 
-discovery.zen.ping.unicast.enabled: true
-discovery.zen.ping.multicast.enabled: true
+#discovery.zen.ping.unicast.enabled: true
+#discovery.zen.ping.multicast.enabled: true
