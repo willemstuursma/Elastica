@@ -199,12 +199,29 @@ class Index implements SearchableInterface
      * @param array $args OPTIONAL Additional arguments
      *
      * @return array Server response
+     * @deprecated Replaced by forcemerge
      *
      * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-optimize.html
      */
     public function optimize($args = array())
     {
-        return $this->request('_optimize', Request::POST, array(), $args);
+        return $this->forcemerge($args);
+    }
+
+    /**
+     * Force merges index
+     *
+     * Detailed arguments can be found here in the link
+     *
+     * @param array $args OPTIONAL Additional arguments
+     *
+     * @return array Server response
+     *
+     * @link https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-forcemerge.html
+     */
+    public function forcemerge($args = array())
+    {
+        return $this->request('_forcemerge', Request::POST, array(), $args);
     }
 
     /**

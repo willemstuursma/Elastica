@@ -484,7 +484,7 @@ class Search
         $this->setOptionsAndQuery(null, $query);
 
         $query = $this->getQuery();
-        $query->setSize(0)
+        $query->setSize(0);
         $path = $this->getPath();
 
         $response = $this->getClient()->request(
